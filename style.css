@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 0.5em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+    padding: 0;
+}
+
+span {
+    font-size: 2rem;
+    margin-bottom: 2.5em;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1.5em;
+}
+
+.gameboard div:nth-child(-n+3) {
+    border-top: none;
+}
+
+.gameboard div:nth-child(3n - 2) {
+    border-left: none;
+}
+
+.gameboard div:nth-child(n+7) {
+    border-bottom: none;
+}
+
+.gameboard div:nth-child(3n) {
+    border-right: none;
+}
+
+.cell {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+}
+
+button {
+    padding: 1em 1.75em;
+    margin-top: 2.5em;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #3679F5;
+    border: none;
+    transition: box-shadow ease 0.5s;
+}
+
+button:hover {
+    box-shadow: 0 0 15px #3679F5;
+}
