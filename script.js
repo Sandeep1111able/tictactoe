@@ -12,7 +12,9 @@ const gameBoard = (() => {
   };
 
   const update = (index, value) => {
-    board[index] = value;
+    if (board[index] === "") {
+      board[index] = value;
+    }
   };
 
   return { render, update };
