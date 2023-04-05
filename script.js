@@ -12,12 +12,12 @@ const gameBoard = (() => {
   };
 
   const update = (index, value) => {
-    if (board[index] === "") {
-      board[index] = value;
-    }
+    board[index] = value;
   };
 
-  return { render, update };
+  const getBoard = () => board;
+
+  return { render, update, getBoard };
 })();
 
 const Player = (name, marker) => {
@@ -30,8 +30,12 @@ const game = (() => {
 
   const handleClick = (event) => {
     let index = +event.target.id;
-    gameBoard.update(index, player[currentPlayerIndex].marker);
-    currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
+    if (gameBoard.getBoard()[index] !== "") {
+      return;
+    } else {
+      gameBoard.update(index, player[currentPlayerIndex].marker);
+      currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
+    }
   };
 
   return {
